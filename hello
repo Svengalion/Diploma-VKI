@@ -1,0 +1,80 @@
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
+
+create table Student {
+  id serial primary key,
+  login varchar(50),
+  password varchar(50),
+  email varchar(50),
+  number varchar(11),
+  [group] varchar(10)
+}
