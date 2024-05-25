@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings
 from pydantic import root_validator
 
+
 class Settings(BaseSettings):
     DB_HOST: str
     DB_PORT: int
