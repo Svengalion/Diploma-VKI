@@ -16,16 +16,16 @@ router = APIRouter(
 
 @router.post("/registration")
 async def register_user(user_data: SUserAuth):
-    existing_user = await UserDAO.find_one_or_none(email=user_data.email)
+    existing_user = await UserDAO.find_one_or_none(login=user_data.login)
     if existing_user:
         raise UserAlreadyExists
     hashed_password = get_password_hash(user_data.password)
-    await UserDAO.insert_data(email=user_data.email, password=hashed_password)
+    await UserDAO.insert_data(login=user_data.login, password=hashed_password)
 
 
 @router.post("/login")
 async def login_user(response: Response, user_data: SUserAuth):
-    user = await authenticate_user(user_data.email, user_data.password)
+    user = await authenticate_user(user_data.login, user_data.password)
     if not user:
         raise IncorrectLogin
     access_token = create_access_token({"sub": str(user.id)})

@@ -27,8 +27,8 @@ def create_access_token(data: dict) -> str:
     return encoded_jwt
 
 
-async def authenticate_user(email: EmailStr, password: str):
-    user = await UserDAO.find_one_or_none(email=email)
+async def authenticate_user(login: str, password: str):
+    user = await UserDAO.find_one_or_none(login=login)
     if not user or not verify_password(password, user.password):
         return None
     else:
