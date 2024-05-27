@@ -7,9 +7,8 @@ from sqlalchemy import pool
 
 from alembic import context
 
-from app.config import settings
-from app.database import *
-from app.models import *
+from app.src.config import settings
+from app.src.models import *
 
 sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 # this is the Alembic Config object, which provides
