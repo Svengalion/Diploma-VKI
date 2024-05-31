@@ -14,9 +14,14 @@ class TestDAO(BaseDAO):
             query = (
                 select(cls.model)
                 .options(
-                    selectinload(Test.answer_to_question).selectinload(AnswerToQuestion.question).selectinload(Question.answer_to_question).selectinload(AnswerToQuestion.answer)
+                    selectinload(Test.answer_to_question).selectinload(AnswerToQuestion.question).selectinload(
+                        Question.answer_to_question).selectinload(AnswerToQuestion.answer)
                 )
                 .filter(cls.model.id == test_id)
             )
             result = await session.execute(query)
             return result.scalar_one_or_none()
+
+
+class AnswerToQuestionDAO(BaseDAO):
+    model = AnswerToQuestion

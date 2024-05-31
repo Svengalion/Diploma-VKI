@@ -69,7 +69,7 @@ class Result(Base):
     id = Column(Integer, Sequence('result_id_seq'), primary_key=True)
     student_id = Column(Integer, ForeignKey('user.id'))
     test_id = Column(Integer, ForeignKey('test.id'))
-    result = Column(String)
+    result = Column(Integer)
 
     user = relationship('User', back_populates='result')
     test = relationship('Test', back_populates='result')

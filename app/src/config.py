@@ -11,6 +11,11 @@ class Settings(BaseSettings):
     DB_URL: str = None
     KEY: str
     ALGORITHM: str
+    PGADMIN_DEFAULT_PASSWORD: str
+    PGADMIN_DEFAULT_EMAIL: str
+    POSTGRES_DB: str
+    POSTGRES_USER: str
+    POSTGRES_PASSWORD: str
 
     @root_validator(pre=True)
     def get_database_url(cls, values):

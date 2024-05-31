@@ -9,13 +9,16 @@ router = APIRouter(
     tags=["Lections"],
 )
 
+
 @router.get("/", response_model=List[SLection])
 async def read_lections(skip: int = 0, limit: int = 10, lections: List[Lection] = Depends(all_lections)):
     return lections
 
+
 @router.get("/{lection_id}", response_model=SLection)
 async def read_lection(lection: Lection = Depends(current_lection)):
     return lection
+
 
 @router.get("/{lection_id}/pdf")
 async def get_lection_pdf(lection_id: int):

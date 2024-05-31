@@ -50,4 +50,24 @@ class IncorrectTest(Exceptions):
 
 class AvatarNotFound(Exceptions):
     status_code = status.HTTP_404_NOT_FOUND
-    detail = ("Avatar not found")
+    detail = "Avatar not found"
+
+
+class QuestionNotFound(Exceptions):
+    status_code = status.HTTP_404_NOT_FOUND
+    detail = "Question not found"
+
+
+class AnswerNotFound(Exceptions):
+    status_code = status.HTTP_404_NOT_FOUND
+    detail = "Answer not found"
+
+
+class TestNotFound(Exceptions):
+    status_code = status.HTTP_404_NOT_FOUND
+    detail = "Test not found"
+
+
+class ResultsNotFound(Exceptions):
+    status_code = status.HTTP_404_NOT_FOUND
+    detail = "Result not found"

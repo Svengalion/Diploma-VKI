@@ -15,7 +15,7 @@ from app.src.models import User
 
 
 def get_token(request: Request):
-    token = request.cookies.get("booking_access_token")
+    token = request.cookies.get("access_token")
     if not token:
         raise TokenAbsent
     return token
@@ -51,7 +51,7 @@ async def login_user(user_data: SUserAuth, response: Response):
     if not user:
         raise IncorrectLogin
     access_token = create_access_token({"sub": str(user.id)})
-    response.set_cookie("booking_access_token", access_token, httponly=True)
+    response.set_cookie("access_token", access_token, httponly=True)
     return access_token
 
 
