@@ -105,3 +105,10 @@ class AnswerToQuestion(Base):
     test = relationship('Test', back_populates='answer_to_question')
     question = relationship('Question', back_populates='answer_to_question')
     answer = relationship('Answer', back_populates='answer_to_question')
+
+
+class Feedback(Base):
+    __tablename__ = 'feedback'
+
+    id = Column(Integer, Sequence('feedback_id_seq'), primary_key=True)
+    feedback = Column(String)

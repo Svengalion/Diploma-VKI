@@ -13,11 +13,10 @@ router = APIRouter(
 )
 
 
-@router.get("/", response_model=List[SResult])
+@router.get("/get", response_model=List[SResult])
 async def read_results(user: User = Depends(current_user)):
     return await get_user_results(user)
 
-
 @router.put("/{test_id}/result")
-async def update_result(test_id: int, update_data: int, user: User = Depends(current_user)):
-    return await update_user_result(test_id, update_data, user)
+async def update_result(data: SUpdateResult, user: User = Depends(current_user)):
+    return await update_user_result(data.test_id, data.update_data, user)

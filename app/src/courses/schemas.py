@@ -1,19 +1,16 @@
 from pydantic import BaseModel
 
 
-class SLection(BaseModel):
+class SCourse(BaseModel):
     id: int
     name: str
-    course_id: int
-    description: str
-    file_path: str
 
     class Config:
         orm_mode = True
         from_attributes = True
 
 
-class SLectionId(BaseModel):
+class SCourseId(BaseModel):
     id: int
 
     class Config:

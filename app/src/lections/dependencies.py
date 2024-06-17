@@ -13,11 +13,13 @@ async def current_lection(id: int):
         raise IncorrectLection
     return lection
 
-async def all_lections():
-    lections = await LectionDAO.find_all()
+
+async def all_lections(course_id: int):
+    lections = await LectionDAO.find_all(course_id=course_id)
     if not lections:
         raise IncorrectLection
     return [SLection.from_orm(lection) for lection in lections]
+
 
 async def lection_pdf(id: int):
     lection = await current_lection(id)

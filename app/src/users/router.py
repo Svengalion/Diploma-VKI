@@ -4,7 +4,7 @@ from app.src.users.dependencies import (
     current_user,
     register_user,
     login_user,
-    update_username,
+    update_name,
     upload_avatar, get_image
 )
 from app.src.models import User
@@ -28,7 +28,7 @@ async def login(response: Response, user_data: SUserAuth):
 
 @router.post("/logout")
 async def logout(response: Response):
-    response.delete_cookie("booking_access_token")
+    response.delete_cookie("access_token")
 
 
 @router.get("/me", response_model=SUser)
@@ -38,7 +38,7 @@ async def me(current_user: User = Depends(current_user)):
 
 @router.put("/update-name", response_model=SUser)
 async def update_username(update_data: SUpdateUsername, user: User = Depends(current_user)):
-    return await update_username(update_data, user)
+    return await update_name(update_data, user)
 
 
 @router.put("/upload-avatar")

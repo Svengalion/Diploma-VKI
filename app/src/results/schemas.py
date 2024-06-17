@@ -16,3 +16,12 @@ class SResult(BaseModel):
 
 class SUpdateResult(BaseModel):
     result: int
+
+
+class SUpdateResult(BaseModel):
+    test_id: int
+    update_data: int
+
+    class Config:
+        orm_mode = True
+        from_attributes = True

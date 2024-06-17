@@ -8,6 +8,7 @@ class SAnswer(BaseModel):
 
     class Config:
         orm_mode = True
+        from_attributes = True
 
 
 class SQuestion(BaseModel):
@@ -17,13 +18,39 @@ class SQuestion(BaseModel):
 
     class Config:
         orm_mode = True
+        from_attributes = True
 
 
 class STest(BaseModel):
     id: int
     name: str
+    course_id: int
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
+
+class STestQuests(BaseModel):
     questions: List[SQuestion]
 
     class Config:
         orm_mode = True
-        from_attributes=True
+        from_attributes = True
+
+
+class STestId(BaseModel):
+    id: int
+
+    class Config:
+        orm_mode = True
+        from_attributes = True
+
+
+class SCheck(BaseModel):
+    test_id: int
+    question_id: int
+    selected_answer_id: int
+
+    class Config:
+        orm_mode = True
+        from_attributes = True

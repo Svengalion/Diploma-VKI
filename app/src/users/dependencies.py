@@ -55,7 +55,7 @@ async def login_user(user_data: SUserAuth, response: Response):
     return access_token
 
 
-async def update_username(update_data: SUpdateUsername, user: User):
+async def update_name(update_data: SUpdateUsername, user: User):
     await UserDAO.update(user.id, name=update_data.name)
     user.name = update_data.name
     return user

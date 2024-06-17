@@ -9,7 +9,7 @@ from alembic import context
 
 from app.src.config import settings
 from app.src.models import *
-
+from app.src.models import Feedback
 sys.path.insert(0, dirname(dirname(dirname(abspath(__file__)))))
 # this is the Alembic Config object, which provides
 # access to the values within the .ini file in use.
